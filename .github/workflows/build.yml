@@ -30,9 +30,9 @@ jobs:
     - run: pwd
     - run: ls -lha
     - run: npm run build:lib
-    - run: yarn publish
+    - run: npm run publish
       env:
-        NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+        NODE_AUTH_TOKEN: ${{ secrets.AUTOMATION_TOKEN }}
     
     - name: Upload Build Artifact
       uses: actions/upload-artifact@v3.1.0
