@@ -6,5 +6,6 @@ export default defineConfig({
       framework: "svelte",
       bundler: "vite",
     },
+    includeShadowDom: true
   },
 });
