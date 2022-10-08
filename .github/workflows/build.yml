@@ -24,7 +24,7 @@ jobs:
     - name: Generate npmrc
       uses: healthplace/npmrc-registry-login-action@v1.0.9
       with:
-        scope: "@mi-ui"
+        scope: "@dev-dafab"
         registry: https://npm.pkg.github.com
         auth-token: ${{ secrets.AUTOMATION_TOKEN }}
         
@@ -37,7 +37,6 @@ jobs:
     - run: npm run build:lib
     - run: ls -lha
     - run: cat .npmrc
-    - run: echo "@mi-ui:registry=https://npm.pkg.github.com" >> .npmrc
     - run: cp package.json dist/
     - run: npm publish
       env:
