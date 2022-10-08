@@ -1,7 +1,9 @@
 {
-  "name": "ui-components",
+  "name": "@mi-ui/ui-components",
   "version": "0.0.1",
   "license": "UNLICENSED",
+  "author": "mi-ui",
+  "description": "ui components and web-components",
   "type": "module",
   "scripts": {
     "dev": "vite",
