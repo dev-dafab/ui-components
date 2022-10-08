@@ -28,12 +28,23 @@ jobs:
         registry: https://npm.pkg.github.com
         auth-token: ${{ secrets.AUTOMATION_TOKEN }}
         
-    - name: Use Node.js ${{ matrix.node-version }}
+    - name: Setup Nodejs s ${{ matrix.node-version }}
       uses: actions/setup-node@v3
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
     - run: npm ci
+    
+    - name: E2E Test
+      uses: cypress-io/github-action@v4.2.0
+      with:
+        component: true
+        
+    - name: Build Library s ${{ matrix.node-version }}
+      uses: actions/setup-node@v3
+      with:
+        node-version: ${{ matrix.node-version }}
+        cache: 'npm'
     - run: npm run build:lib
     - run: cp package.json dist/
     - run: npm publish
