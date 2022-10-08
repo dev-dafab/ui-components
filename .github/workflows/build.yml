@@ -35,8 +35,6 @@ jobs:
         cache: 'npm'
     - run: npm ci
     - run: npm run build:lib
-    - run: ls -lha
-    - run: cat .npmrc
     - run: cp package.json dist/
     - run: npm publish
       env:
