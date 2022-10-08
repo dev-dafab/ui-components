@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "build:lib": "vite build -c=vite.lib.config.js",
+    "build:lib": "vite build -c=./vite.lib.config.js",
     "package": "vite package",
     "preview": "vite preview",
     "check": "svelte-check --tsconfig ./tsconfig.json",
