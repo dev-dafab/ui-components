@@ -20,20 +20,25 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
-    
+
+    - name: Generate npmrc
+      uses: healthplace/npmrc-registry-login-action@v1.0.9
+      with:
+        scope: "@mi-ui"
+        registry: https://npm.pkg.github.com
+        auth-token: ${{ secrets.AUTOMATION_TOKEN }}
+        
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v3
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
     - run: npm ci
-    - run: pwd
-    - run: ls -lha
     - run: npm run build:lib
-    - run: npm publish
+    - run: cp package.json dist/
       env:
         NODE_AUTH_TOKEN: ${{ secrets.AUTOMATION_TOKEN }}
-    
+        
     - name: Upload Build Artifact
       uses: actions/upload-artifact@v3.1.0
       with:
