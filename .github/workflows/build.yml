@@ -30,7 +30,7 @@ jobs:
     - run: pwd
     - run: ls -lha
     - run: npm run build:lib
-    - run: npm run publish
+    - run: npm publish
       env:
         NODE_AUTH_TOKEN: ${{ secrets.AUTOMATION_TOKEN }}
     
