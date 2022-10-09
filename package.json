@@ -6,6 +6,7 @@
   "description": "ui components and web-components",
   "type": "module",
   "scripts": {
+    "commit": "git-cz",
     "dev": "vite",
     "build": "vite build",
     "build:lib": "vite build -c=./vite.lib.config.js",
@@ -24,7 +25,9 @@
     "@sveltejs/vite-plugin-svelte": "^1.0.2",
     "@tsconfig/svelte": "^3.0.0",
     "autoprefixer": "^10.4.12",
+    "commitizen": "^4.2.5",
     "cypress": "^10.9.0",
+    "cz-conventional-changelog": "^3.3.0",
     "daisyui": "^2.31.0",
     "postcss": "^8.4.17",
     "svelte": "^3.49.0",
@@ -38,5 +41,8 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/dev-dafab/ui-component.git"
+  },
+  "czConfig": {
+    "path": "node_modules/cz-conventional-changelog"
   }
 }
